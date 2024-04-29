@@ -1,5 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { authLogin } from "../../redux/auth/operations";
 import { MIN_CHAR_PASSWORD_VALIDATION } from "../../utils/constants";
 
 const loginUserSchema = Yup.object().shape({
@@ -19,12 +21,12 @@ const FORM_INITIAL_VALUES = {
   password: "",
 };
 
-const handleSubmit = (values, actions) => {
-  console.log(values);
-  actions.resetForm();
-};
-
 const LoginPage = () => {
+  const dispatch = useDispatch();
+  const handleSubmit = (values, actions) => {
+    dispatch(authLogin(values));
+    actions.resetForm();
+  };
   return (
     <div>
       <Formik
