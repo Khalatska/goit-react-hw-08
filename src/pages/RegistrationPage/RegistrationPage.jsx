@@ -1,5 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import { authRegister } from "../../redux/auth/operations";
 import {
   MAX_CHAR_NAME_VALIDATION,
   MIN_CHAR_PASSWORD_VALIDATION,
@@ -29,12 +31,14 @@ const FORM_INITIAL_VALUES = {
   password: "",
 };
 
-const handleSubmit = (values, actions) => {
-  console.log(values);
-  actions.resetForm();
-};
-
 const RegistrationPage = () => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = (values, actions) => {
+    dispatch(authRegister(values));
+    actions.resetForm();
+  };
+
   return (
     <div>
       <Formik
