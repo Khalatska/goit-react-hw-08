@@ -1,0 +1,2 @@
+export const MAX_CHAR_NAME_VALIDATION = 38;
+export const MIN_CHAR_PASSWORD_VALIDATION = 7;
