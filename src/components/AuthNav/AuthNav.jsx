@@ -7,7 +7,7 @@ export const AuthNav = () => {
     return clsx(css.link, isActive && css.active);
   };
   return (
-    <div>
+    <div className={css.auth}>
       <NavLink to="/register" className={activeLink}>
         Register
       </NavLink>

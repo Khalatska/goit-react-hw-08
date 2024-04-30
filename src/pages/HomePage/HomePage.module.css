@@ -1,0 +1,11 @@
+.link {
+  color: rgb(144, 70, 213);
+}
+.active {
+  color: rgb(70, 26, 112);
+  text-decoration: none;
+}
+.text {
+  text-align: center;
+  margin-top: 200px;
+}

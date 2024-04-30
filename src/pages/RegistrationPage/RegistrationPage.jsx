@@ -2,6 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { authRegister } from "../../redux/auth/operations";
+import css from "./RegistrationPage.module.css";
 import {
   MAX_CHAR_NAME_VALIDATION,
   MIN_CHAR_PASSWORD_VALIDATION,
@@ -46,38 +47,47 @@ const RegistrationPage = () => {
         validationSchema={registerUserSchema}
         onSubmit={handleSubmit}
       >
-        <Form>
-          <h2>Registration</h2>
+        <Form className={css.form}>
+          <h2>Registration👇</h2>
           <label>
-            <span>Name</span>
+            <span className={css.span}>Name</span>
             <br />
-            <Field type="text" name="name" placeholder="Name"></Field>
-            <ErrorMessage component="p" name="name" />
+            <Field
+              type="text"
+              name="name"
+              placeholder="Name"
+              className={css.input}
+            ></Field>
+            <ErrorMessage component="p" name="name" className={css.error} />
           </label>
           <br />
           <label>
-            <span>Email</span>
+            <span className={css.span}>Email</span>
             <br />
             <Field
               type="email"
               name="email"
               placeholder="email@email.com"
+              className={css.input}
             ></Field>
-            <ErrorMessage component="p" name="email" />
+            <ErrorMessage component="p" name="email" className={css.error} />
           </label>
           <br />
           <label>
-            <span>Password</span>
+            <span className={css.span}>Password</span>
             <br />
             <Field
               type="password"
               name="password"
               placeholder="Enter your password"
+              className={css.input}
             ></Field>
-            <ErrorMessage component="p" name="password" />
+            <ErrorMessage component="p" name="password" className={css.error} />
           </label>
           <br />
-          <button type="submit">Register</button>
+          <button type="submit" className={css.btn}>
+            Sign up
+          </button>
         </Form>
       </Formik>
     </div>
