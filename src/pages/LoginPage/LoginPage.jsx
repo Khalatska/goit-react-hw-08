@@ -14,7 +14,7 @@ const loginUserSchema = Yup.object().shape({
     .required("Password is required!")
     .min(
       MIN_CHAR_PASSWORD_VALIDATION,
-      `Your password must be greater than ${MIN_CHAR_PASSWORD_VALIDATION} characters!`
+      `Minimum ${MIN_CHAR_PASSWORD_VALIDATION} characters!`
     ),
 });
 
