@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 import { authLogin } from "../../redux/auth/operations";
 import { MIN_CHAR_PASSWORD_VALIDATION } from "../../utils/constants";
 import css from "./LoginPage.module.css";
-import toast from "react-hot-toast";
-import { Toaster } from "react-hot-toast";
+// import toast from "react-hot-toast";
+// import { Toaster } from "react-hot-toast";
 const loginUserSchema = Yup.object().shape({
   email: Yup.string()
     .required("Email address is required!")
@@ -26,17 +26,17 @@ const FORM_INITIAL_VALUES = {
 const LoginPage = () => {
   const dispatch = useDispatch();
   const handleSubmit = (values, actions) => {
-    try {
-      dispatch(authLogin(values));
-    } catch (error) {
-      toast.error("This didn't work. You may need to register.");
-    }
+    // try {
+    dispatch(authLogin(values));
+    // } catch (error) {
+    //   toast.error("This didn't work. You may need to register.");
+    // }
     actions.resetForm();
   };
 
   return (
     <div>
-      <Toaster position="top-center" reverseOrder={false} />
+      {/* <Toaster position="top-center" reverseOrder={false} /> */}
       <Formik
         initialValues={FORM_INITIAL_VALUES}
         validationSchema={loginUserSchema}
